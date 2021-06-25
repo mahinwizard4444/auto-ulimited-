@@ -126,7 +126,13 @@ async def auto_filter(bot, update):
             )
         
     else:
-        return # Couldn't Find Movie please Check spelling 
+        return # Send_message = await bot.send_message(
+         chat_id=update.chat.id,
+         text="not find this movie..... ", 
+         reply_to_message_id=update.message_id
+        )
+         await asyncio.sleep(15)
+         await Send_message.delete()
     
 
     if len(results) == 0: # double check
